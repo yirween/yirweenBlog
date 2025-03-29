@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+import type { AlertBaseProps } from "@interfaces/data";
+
+const { type, icon } = Astro.props;
+---
+
+<div role="alert" class={`alert alert-${type} not-prose`}>
+  <slot name="icon">
+    <Icon name={icon} class="shrink-0 w-6 h-6" />
+  </slot>
+  <span><slot /></span>
+</div>
